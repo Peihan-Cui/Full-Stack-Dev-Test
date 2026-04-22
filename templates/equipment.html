@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Select Equipment</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <h2>Select Equipment</h2>
+  <p><strong>Job:</strong> {{ job.job_type }} - {{ job.job_level }}</p>
+  <form method="POST">
+    <div class="equipment-list">
+      {% for item in equipment %}
+      <label class="equipment-card">
+        <input 
+          type="checkbox" 
+          name="equipment" 
+          value="{{ item.id }}"
+          class="equipment-checkbox"
+        >
+        <div class="card-content">
+          <div class="equipment-title">
+            <strong>{{ item.name }}</strong>
+          </div>
+          <small>
+            {{ item.category }} | {{ item.brand }}
+          </small>
+          <div class="price">
+            ${{ item.baseCost or item.base_cost }}
+          </div>
+        </div>
+      </label>
+
+      {% endfor %}
+    </div>
+
+    <div class="submit-button-container">
+      <button type="submit">Generate Quote</button>
+    </div>
+  </form>
+</body>
+</html>

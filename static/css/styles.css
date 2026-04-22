@@ -16,7 +16,8 @@ form {
   background: white;
   padding: 20px;
   border-radius: 8px;
-  width: 350px;
+  width: auto;
+  min-width: 20rem;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
@@ -30,7 +31,8 @@ input, select {
 button {
   margin-top: 15px;
   padding: 10px;
-  width: 30%;
+  width: auto;
+  min-width: 5rem;
   background-color: #007BFF;
   color: white;
   border: none;
@@ -44,11 +46,55 @@ button:hover {
 
 .submit-button-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 }
-
 
 .customer-info-form {
   width: 30rem;
   padding: 3rem;
+}
+
+.equipment-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.equipment-card {
+  display: block;
+  background: white;
+  padding: 14px;
+  border-radius: 10px;
+  border: 2px solid gray;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 10px;
+  user-select: none;
+}
+
+.equipment-checkbox {
+  display: none;
+}
+
+.equipment-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    border-color: #cfd8dc;
+}
+
+.equipment-card:has(input:checked) {
+  border-color: #007BFF;
+  background: #f0f7ff;
+  box-shadow: 0 6px 18px rgba(0,123,255,0.15);
+}
+
+.equipment-title {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.price {
+  margin-top: 6px;
+  font-weight: bold;
+  color: #333;
 }

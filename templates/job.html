@@ -1,14 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <title>Job Information</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <title>Select Job</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-    <h2>Job Information for {{ customer.name }}</h2>
-    <p>Property Type: {{ customer.propertyType }}</p>
-    <p>Square Footage: {{ customer.squareFootage }}</p>
-    <p>System Type: {{ customer.systemType }}</p>
-    <p>Phone: {{ customer.phone }}</p>
+  
+  <h2>Job Type Selection</h2>
+  {% if customer %}
+      <p><strong>Customer:</strong> {{ customer.name }}</p>
+      <p><strong>System:</strong> {{ customer.systemType }}</p>
+  {% endif %}
+  <form method="POST" action="/job">
+    <label>Job Type:</label>
+    <select name="job_type" required>
+      <option value="diagnostic">Diagnostic</option>
+      <option value="repair">Repair</option>
+      <option value="install">Install</option>
+      <option value="maintenance">Maintenance</option>
+      <option value="ductwork">Ductwork</option>
+    </select>
+    <br><br>
+    <label>Job Complexity:</label>
+    <select name="job_level" required>
+      <option value="standard">Standard</option>
+      <option value="complex">Complex</option>
+      <option value="minor">Minor</option>
+      <option value="major">Major</option>
+    </select>
+    <br><br>
+    <div class="submit-button-container">
+      <button type="submit">Continue</button>
+    </div>
+  </form>
 </body>
 </html>
