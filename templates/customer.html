@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Info</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+    <h2>Enter Customer Information</h2>
+
+    <form method="POST" action="/customer" class="customer-info-form">
+
+        <label>Name:</label><br>
+        <input type="text" name="name" required><br><br>
+
+        <label>Property Type:</label><br>
+        <select name="propertyType">
+            <option value="Residential">Residential</option>
+            <option value="Commercial">Commercial</option>
+        </select><br><br>
+
+        <label>Square Footage (optional):</label><br>
+        <input type="number" name="squareFootage"><br><br>
+
+        <label>System Type (optional):</label><br>
+        <input type="text" name="systemType" placeholder="AC + Furnace"><br><br>
+
+        <label>Phone (optional):</label><br>
+        <input type="text" name="phone"><br><br>
+
+        <div class="submit-button-container">
+          <button type="submit">Next</button>
+        </div>
+
+    </form>
+
+</body>
+</html>

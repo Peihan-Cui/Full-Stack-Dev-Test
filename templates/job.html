@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Job Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h2>Job Information for {{ customer.name }}</h2>
+    <p>Property Type: {{ customer.propertyType }}</p>
+    <p>Square Footage: {{ customer.squareFootage }}</p>
+    <p>System Type: {{ customer.systemType }}</p>
+    <p>Phone: {{ customer.phone }}</p>
+</body>
+</html>
