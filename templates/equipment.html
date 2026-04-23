@@ -9,30 +9,33 @@
   <p><strong>Job:</strong> {{ job.jobType }} - {{ job.level }}</p>
   <form method="POST">
     <div class="equipment-list">
-      {% for item in equipment %}
-      <label class="equipment-card">
-        <input 
-          type="checkbox" 
-          name="equipment" 
-          value="{{ item.id }}"
-          class="equipment-checkbox"
-        >
-        <div class="card-content">
-          <div class="equipment-title">
-            <strong>{{ item.name }}</strong>
-          </div>
-          <small>
-            {{ item.category }} | {{ item.brand }}
-          </small>
-          <div class="price">
-            ${{ item.baseCost or item.base_cost }}
+      {% for category, items in equipment | groupby("category") %}
+        <div class="category-section">
+          <h3 class="category-title">{{ category }}</h3>
+          <div class="category-grid">
+            {% for item in items %}
+              <label class="equipment-card">
+                <input 
+                  type="checkbox" 
+                  name="equipment" 
+                  value="{{ item.id }}"
+                  class="equipment-checkbox"
+                >
+                <div class="card-content">
+                  <div class="equipment-title">
+                    <strong>{{ item.name }}</strong>
+                  </div>
+                  <small>{{ item.brand }}</small>
+                  <div class="price">
+                    ${{ item.baseCost or item.base_cost }}
+                  </div>
+                </div>
+              </label>
+            {% endfor %}
           </div>
         </div>
-      </label>
-
       {% endfor %}
     </div>
-
     <div class="submit-button-container">
       <a href="/job" class="back-button">Back</a>
       <button type="submit">Generate Quote</button>

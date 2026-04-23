@@ -124,9 +124,11 @@ a {
 }
 
 .equipment-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+  max-width: 1000px;
 }
 
 .equipment-card {
@@ -160,6 +162,27 @@ a {
 .equipment-title {
   font-size: 16px;
   margin-bottom: 4px;
+}
+
+.category-section {
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 30px;
+}
+
+.category-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 12px;
+  padding-left: 5px;
+  border-left: 4px solid #007BFF;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 15px;
 }
 
 .price {
