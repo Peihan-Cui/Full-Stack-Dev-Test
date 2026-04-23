@@ -2,12 +2,17 @@
 <html>
 <head>
     <title>HVAC Estimator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
-<body>
-  <h2>HVAC Estimate Tool</h2>
-
-  <a href="/customer">
-    <button>New Quote</button>
-  </a>
+<body class="home-page">
+  <div class="home-container">
+    <h1>HVAC Estimator</h1>
+    <p class="subtitle">
+      Generate quotes for customers!
+    </p>
+    <a href="/customer" class="primary-button">
+      New Quote
+    </a>
+  </div>
 </body>
 </html>
