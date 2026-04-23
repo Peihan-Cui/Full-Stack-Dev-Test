@@ -18,10 +18,11 @@ form {
   border-radius: 8px;
   width: auto;
   min-width: 20rem;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-input, select {
+input,
+select {
   width: 100%;
   padding: 8px;
   margin-top: 5px;
@@ -77,15 +78,15 @@ button:hover {
 }
 
 .equipment-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-    border-color: #cfd8dc;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  border-color: #cfd8dc;
 }
 
 .equipment-card:has(input:checked) {
   border-color: #007BFF;
   background: #f0f7ff;
-  box-shadow: 0 6px 18px rgba(0,123,255,0.15);
+  box-shadow: 0 6px 18px rgba(0, 123, 255, 0.15);
 }
 
 .equipment-title {
@@ -97,4 +98,64 @@ button:hover {
   margin-top: 6px;
   font-weight: bold;
   color: #333;
+}
+
+.quote-container {
+  max-width: 600px;
+  margin: auto;
+  background: #ffffff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.section {
+  background: #fafafa;
+  padding: 15px 18px;
+  border-radius: 10px;
+  margin-bottom: 18px;
+  border: 1px solid #eee;
+}
+
+.section h3 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  color: #444;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 5px;
+}
+
+.section p {
+  margin: 4px 0;
+  padding-left: 5px;
+  font-size: 14px;
+}
+
+.line-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 14px;
+}
+
+.line-item.total {
+  font-weight: 600;
+  margin-top: 8px;
+  border-top: 2px solid #ddd;
+  padding-top: 8px;
+}
+
+.total-box {
+  background: linear-gradient(135deg, #03478f, #4da3ff);
+  color: white;
+  text-align: center;
+  padding: 18px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.total-box h2 {
+  margin: 0;
+  font-size: 26px;
+  letter-spacing: 1px;
 }

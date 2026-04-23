@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Estimate</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+<div class="quote-container">
+
+  <h1>HVAC Service Estimate</h1>
+
+  <div class="section">
+    <h3>Customer</h3>
+    <div>
+      <p>Name: {{ customer.name }}</p>
+      <p>Property Type: {{ customer.propertyType }}</p>
+      <p>System Type: {{ customer.systemType or 'N/A' }}</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>Work Summary</h3>
+    <p>{{ job.jobType }} ({{ job.level }})</p>
+  </div>
+
+  <div class="section">
+    <h3>Equipment</h3>
+
+    {% for item in equipment %}
+      <div class="line-item">
+        <span>{{ item.name }}</span>
+        <span>${{ item.baseCost or item.base_cost }}</span>
+      </div>
+    {% endfor %}
+
+    <div class="line-item total">
+      <span>Equipment Total</span>
+      <span>${{ equipment_total }}</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>Labor</h3>
+    <div class="line-item">
+      <p>{{ min_hours }} – {{ max_hours }} hrs</p>
+      <p> ${{ hourly }}/hr</p>
+    </div>
+    <div class="line-item">
+      <span>Labor Range</span>
+      <span>${{ labor_min }} – ${{ labor_max }}</span>
+    </div>
+  </div>
+
+  <div class="section total-box">
+    <h2>
+      $Total: {{ total_min }} – ${{ total_max }}
+    </h2>
+  </div>
+
+</div>
+
+</body>
+</html>

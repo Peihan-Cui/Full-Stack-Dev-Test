@@ -4,34 +4,31 @@
   <title>Select Job</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
+
 <body>
-  
   <h2>Job Type Selection</h2>
-  {% if customer %}
-      <p><strong>Customer:</strong> {{ customer.name }}</p>
-      <p><strong>System:</strong> {{ customer.systemType }}</p>
-  {% endif %}
+  <p><strong>Customer:</strong> {{ customer.name }}</p>
+  <p><strong>System:</strong> {{ customer.systemType }}</p>
   <form method="POST" action="/job">
     <label>Job Type:</label>
-    <select name="job_type" required>
-      <option value="diagnostic">Diagnostic</option>
-      <option value="repair">Repair</option>
-      <option value="install">Install</option>
-      <option value="maintenance">Maintenance</option>
-      <option value="ductwork">Ductwork</option>
+    <select id="jobType" name="job_type">
+      {% for job in job_map %}
+        <option value="{{ job }}">{{ job.title() }}</option>
+      {% endfor %}
     </select>
     <br><br>
-    <label>Job Complexity:</label>
-    <select name="job_level" required>
-      <option value="standard">Standard</option>
-      <option value="complex">Complex</option>
-      <option value="minor">Minor</option>
-      <option value="major">Major</option>
-    </select>
+    <label>Job Level:</label>
+    <select id="jobLevel" name="job_level"></select>
     <br><br>
     <div class="submit-button-container">
       <button type="submit">Continue</button>
     </div>
   </form>
+
+  <script src="{{ url_for('static', filename='js/job.js') }}"></script>
+  <script>
+    const JOB_MAP = JSON.parse('{{ job_map | tojson | safe }}');
+    initJobSelector(JOB_MAP);
+  </script>
 </body>
 </html>
