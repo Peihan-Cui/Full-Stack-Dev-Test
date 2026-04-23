@@ -30,6 +30,8 @@ Fork this repo, build your solution, and include a short write-up explaining you
 
 ## My approach
 
+*(Note: you need [Flask](https://flask.palletsprojects.com/en/stable/) to run this project, please follow the link to install)*
+
 I approached this project with a strong focus on the intended users, which are the HVAC technicians. From the original problem, I identified that the main problem was minimizing the time and effort required to look up information and generate estimates. I thought that since technicians typically already understand the problem they are dealing with; they mainly just need a fast way to translate that knowledge into a price estimate. Based on that, I designed a system that allows the technician to quickly select the job type, level, and required equipment, and then automatically generates a price range.
 
 The application first collects basic customer information, such as name and property type (required), along with optional details like square footage and system type. It then prompts the technician to select the job type and complexity level, followed by the relevant equipment. Using this information, the system calculates and displays a final price range based on equipment costs and labor estimates.
