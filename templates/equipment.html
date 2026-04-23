@@ -6,7 +6,7 @@
 </head>
 <body>
   <h2>Select Equipment</h2>
-  <p><strong>Job:</strong> {{ job.job_type }} - {{ job.job_level }}</p>
+  <p><strong>Job:</strong> {{ job.jobType }} - {{ job.level }}</p>
   <form method="POST">
     <div class="equipment-list">
       {% for item in equipment %}
@@ -34,6 +34,7 @@
     </div>
 
     <div class="submit-button-container">
+      <a href="/job" class="back-button">Back</a>
       <button type="submit">Generate Quote</button>
     </div>
   </form>
