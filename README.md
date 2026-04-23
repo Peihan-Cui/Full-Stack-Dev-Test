@@ -27,3 +27,15 @@ This is real-ish data pulled from our systems. It's not perfect — some of it w
 Build something that helps.
 
 Fork this repo, build your solution, and include a short write-up explaining your approach — what you built, why you made the choices you did, and what you'd do differently with more time.
+
+## My approach
+
+I approached this project with a strong focus on the intended users, which are the HVAC technicians. From the original problem, I identified that the main problem was minimizing the time and effort required to look up information and generate estimates. I thought that since technicians typically already understand the problem they are dealing with; they mainly just need a fast way to translate that knowledge into a price estimate. Based on that, I designed a system that allows the technician to quickly select the job type, level, and required equipment, and then automatically generates a price range.
+
+The application first collects basic customer information, such as name and property type (required), along with optional details like square footage and system type. It then prompts the technician to select the job type and complexity level, followed by the relevant equipment. Using this information, the system calculates and displays a final price range based on equipment costs and labor estimates.
+
+I chose to implement the project as a lightweight web application using Flask and all you have to do is run python app.py to see the program. I considered more advanced approaches, such as allowing technicians to input free-form text and using natural language processing to interpret the job, or building a dynamic decision tree that suggests equipment in real time. However, I ultimately chose a more straightforward design because it is faster to implement and aligns with how technicians are currently generating quotes, minimizing the learning curve.
+
+If I had more time, I would expand the application with additional features. For example, I would implement persistent storage to save and display past quotes, as well as allow users to edit and reuse them. I would also improve the organization and searchability of equipment to make selection even faster. Finally, I think I would implement a more dynamic interface as mentioned above, that updates the total cost in real time as the user makes selections. This makes it easier for technicians to quickly compare options without navigating backward through the workflow.
+
+Overall I did have fun coming up with a solution for this problem and I really appreciate this opportunity provided!
